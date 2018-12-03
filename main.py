@@ -33,5 +33,22 @@ if cadeia[0].isdigit() == 1:
             cont += 1
 
 ##PALAVRAS RESERVADAS
+if len(cadeia) >2 and cadeia[0].isalpha() == 1 and cadeia[1].isalpha() == 1:
+    estado = 1
 
-    
+    for x in cadeia:
+        while cont < len(cadeia):
+            if estado == 1:
+                if cadeia[cont].isalpha() == 1:
+                    estado = 2
+            if estado == 2:
+                if cadeia[cont].isalpha() == 1:
+                    estado = 3
+            if estado == 3:
+                if cadeia[cont].isalpha() == 1:
+                    estado = 3
+                elif cont == len(cadeia):
+                    print('É uma palavra Reservada!')
+            cont += 1
+
+##IDENTIFICADORES
